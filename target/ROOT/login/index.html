@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+#set(title="登录")
+#@layout()
+
+#define body()
+<div class="layui-main" style="text-align:center;width: 80%;margin:0 auto;">
+    <p style="font-size: 120%">请登录</p>
+    <div id="login-div">
+        <form class="layui-form" action="login" id="login-form" method="post">
+            <div class="layui-form-item">
+                <input type="text" placeholder="请输入rov_ip" required lay-verify="required" name="rov_ip"
+                       id="input-rov"
+                       class="layui-input">
+            </div>
+            <div class="layui-form-item">
+                <input type="text" placeholder="请输入cam_ip" required lay-verify="required" name="cam_ip"
+                       id="input-cam",
+                       class="layui-input">
+            </div>
+            <div class="layui-form-item" id="catpcha-div">
+                <input type="text" placeholder="请输入验证码" required lay-verify="required" name="captcha"
+                       class="layui-input" style="display:inline;width: 85%;float: left"
+                       id="captcha-input">
+                <img src='login/captcha' id="captcha-img" title="点击刷新" style="float: right">
+            </div>
+            <div class="layui-form-item">
+                <button type="submit" class="layui-btn" lay-submit id="button-submit" style="width: 100%;"
+                        lay-filter="loginSubmit">登录
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+#end
+
+#define js()
+<script src="/js/login.js"></script>
+#end
