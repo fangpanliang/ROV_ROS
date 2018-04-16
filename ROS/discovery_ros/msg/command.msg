@@ -1,0 +1,10 @@
+int32 setspeed
+int32 setyaw
+int32 setdepth
+int32 setOpenOrCloseLopp
+int32 UporDown 
+int32 LeftorRight
+int32 ForwardorBackward
+int32 ClimborDive
+int32 RobotYaw
+int32 RobotDepth

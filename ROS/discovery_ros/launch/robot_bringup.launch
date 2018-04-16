@@ -1,0 +1,6 @@
+<launch>
+  
+  <node pkg="discovery_ros" name="sublistener" type="robot_connect_and_send.py" output="screen">
+  </node>
+
+</launch>
