@@ -1,23 +1,23 @@
-#sql("findForwardorBackward")
-SELECT ForwardorBackward as datas,times FROM  keyboard
+#sql("findRoll")
+SELECT roll as datas,times FROM  rov
 #end
 
-#sql("findClimborDive")
-SELECT ClimborDive as datas,times FROM  keyboard
+#sql("findYaw")
+SELECT yaw as datas,times FROM  rov
 #end
 
-#sql("findRobotYaw")
-SELECT RobotYaw as datas,times FROM rov
+#sql("findPitch")
+SELECT pitch as datas,times FROM rov
 #end
 
-#sql("findRobotDepth")
-SELECT RobotDepth as datas,times FROM  rov
+#sql("findDepth")
+SELECT depth as datas,times FROM  rov
 #end
 
-#sql("findLeftorRight")
-SELECT LeftorRight as datas,times FROM  keyboard
+#sql("findSpeed")
+SELECT speed as datas,times FROM  rov
 #end
 
-#sql("findUporDown")
-SELECT UporDown as datas,times FROM  keyboard
+#sql("findStatus")
+SELECT roll,yaw,pitch FROM  rov order by id DESC limit 1
 #end

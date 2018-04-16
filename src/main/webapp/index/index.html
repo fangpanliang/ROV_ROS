@@ -14,13 +14,14 @@
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="">数据</a></li>
             <li class="layui-nav-item"><a id="video" href="javascript:;">视频</a></li>
+            <li class="layui-nav-item"><a id="webGL" href="javascript:;">3D</a></li>
             <li class="layui-nav-item"><a href="">设置</a></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="/img/github.jpg" class="layui-nav-img">
-                    贤心
+                    joke
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="">基本资料</a></dd>
@@ -36,17 +37,16 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                        <a class="rov" id="UporDown" href="javascript:;">上升下降</a>
+                        <a class="rov" id="roll" href="javascript:;">roll</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a class="rov" id="LeftorRight" href="javascript:;">左转右转</a>
+                    <a class="rov" id="yaw" href="javascript:;">yaw</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a class="rov" id="ForwardorBackward" href="javascript:;">前进后退</a>
+                    <a class="rov" id="pitch" href="javascript:;">pitch</a>
                 </li>
-                <li class="layui-nav-item"><a class="rov" id="ClimborDive" href="javascript:;">俯仰</a></li>
-                <li class="layui-nav-item"><a class="rov" id="RobotYaw" href="javascript:;">航向角</a></li>
-                <li class="layui-nav-item"><a class="rov" id="RobotDepth" href="javascript:;">深度</a></li>
+                <li class="layui-nav-item"><a class="rov" id="depth" href="javascript:;">深度</a></li>
+                <li class="layui-nav-item"><a class="rov" id="speed" href="javascript:;">速度</a></li>
             </ul>
         </div>
     </div>
@@ -58,7 +58,7 @@
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        © 2018 yzcao.xin
+        © 2018 yzcao.xin. All rights reserved.
     </div>
 </div>
 <script src="/layui/layui.js"></script>

@@ -27,8 +27,9 @@
 				<checksumPolicy>fail</checksumPolicy>
 			</snapshots>
 		</repository>
+
 	</repositories>
-	
+
 	<!-- 添加快照版本库,updatePolicy: always、daily、interval、never -->
 	<!-- repositories>
     <repository>
@@ -52,7 +53,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-
 	  <dependency>
 		  <groupId>javax.servlet</groupId>
 		  <artifactId>javax.servlet-api</artifactId>
@@ -100,7 +100,13 @@
     	<artifactId>cos</artifactId>
     	<version>2017.5</version>
     </dependency>
-	
+
+	   <!-- <dependency>
+		  <groupId>com.jfinal</groupId>
+		  <artifactId>jetty-server</artifactId>
+		  <version>8.1.8</version>
+		  <scope>compile</scope>
+	  </dependency> -->
   </dependencies>
 
 	<build>

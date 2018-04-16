@@ -10,35 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-03-15 22:57:37
+Date: 2018-04-16 23:08:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for device
--- ----------------------------
-DROP TABLE IF EXISTS `device`;
-CREATE TABLE `device` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `rov_ip` varchar(255) DEFAULT NULL,
-  `cam_ip` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for keyboard
--- ----------------------------
-DROP TABLE IF EXISTS `keyboard`;
-CREATE TABLE `keyboard` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `UporDown` double(5,2) DEFAULT NULL,
-  `LeftorRight` double(5,2) DEFAULT NULL,
-  `ForwardorBackward` double(5,2) DEFAULT NULL,
-  `ClimborDive` double(5,2) DEFAULT NULL,
-  `times` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for rov
@@ -46,8 +21,22 @@ CREATE TABLE `keyboard` (
 DROP TABLE IF EXISTS `rov`;
 CREATE TABLE `rov` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `RobotYaw` double(5,2) DEFAULT NULL,
-  `RobotDepth` double(5,2) DEFAULT NULL,
+  `roll` double(5,2) DEFAULT NULL,
+  `yaw` double(5,2) DEFAULT NULL,
+  `pitch` double(5,2) DEFAULT NULL,
+  `depth` double(5,2) DEFAULT NULL,
+  `speed` double(5,2) DEFAULT NULL,
   `times` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;

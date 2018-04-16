@@ -30,9 +30,9 @@ public class LoginController extends Controller {
      */
     @Clear({UserInterceptor.class})
     public void doLogin() {
-        String rov_ip = getPara("rov_ip");
-        String cam_ip = getPara("cam_ip");
-        Ret ret = srv.login(rov_ip, cam_ip);
+        String username = getPara("username");
+        String password = getPara("password");
+        Ret ret = srv.login(username, password);
         if (ret.getBoolean("status")) {
             setCookie(LoginService.SESSION_ID_NAME, ret.getStr("token"), 60 * 60);
         }

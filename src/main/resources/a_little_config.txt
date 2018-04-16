@@ -1,9 +1,9 @@
-jdbcUrl = jdbc:mysql://localhost/rov_ros?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+jdbcUrl = jdbc:mysql://39.106.135.226/rov_ros?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
 user = root
 password = root
 devMode = true
 
-redis.host=127.0.0.1
+redis.host=39.106.135.226
 redis.port=6379
 redis.timeout=60*60
 redis.password=100200

@@ -18,22 +18,49 @@ public abstract class BaseRov<M extends BaseRov<M>> extends Model<M> implements 
 		return getInt("id");
 	}
 
-	public M setRobotYaw(java.lang.Double RobotYaw) {
-		set("RobotYaw", RobotYaw);
+	public M setRoll(java.lang.Double roll) {
+		set("roll", roll);
 		return (M)this;
 	}
 	
-	public java.lang.Double getRobotYaw() {
-		return getDouble("RobotYaw");
+	public java.lang.Double getRoll() {
+		return getDouble("roll");
 	}
 
-	public M setRobotDepth(java.lang.Double RobotDepth) {
-		set("RobotDepth", RobotDepth);
+	public M setYaw(java.lang.Double yaw) {
+		set("yaw", yaw);
 		return (M)this;
 	}
 	
-	public java.lang.Double getRobotDepth() {
-		return getDouble("RobotDepth");
+	public java.lang.Double getYaw() {
+		return getDouble("yaw");
+	}
+
+	public M setPitch(java.lang.Double pitch) {
+		set("pitch", pitch);
+		return (M)this;
+	}
+	
+	public java.lang.Double getPitch() {
+		return getDouble("pitch");
+	}
+
+	public M setDepth(java.lang.Double depth) {
+		set("depth", depth);
+		return (M)this;
+	}
+	
+	public java.lang.Double getDepth() {
+		return getDouble("depth");
+	}
+
+	public M setSpeed(java.lang.Double speed) {
+		set("speed", speed);
+		return (M)this;
+	}
+	
+	public java.lang.Double getSpeed() {
+		return getDouble("speed");
 	}
 
 	public M setTimes(java.util.Date times) {

@@ -2,11 +2,20 @@ layui.use(['element', 'jquery', 'layer'], function() {
     var element = layui.element;
     var $ = layui.jquery;
     var layer = layui.layer;
+    var int;
     var video = document.getElementById("video");
+    var webGL = document.getElementById("webGL");
     var frame = document.getElementById("myframe");
     var graph = document.getElementById("graph");
-    frame.src="http://192.168.10.10";
     video.onclick=function(){
+        window.clearInterval(int);
+        frame.src="/index/live.html";
+        frame.style.display="";
+        graph.style.display="none";
+    };
+    webGL.onclick=function () {
+        window.clearInterval(int);
+        frame.src="/index/webGL.html";
         frame.style.display="";
         graph.style.display="none";
     };
@@ -20,7 +29,7 @@ layui.use(['element', 'jquery', 'layer'], function() {
         },
         title: {
             left: 'center',
-            text: '大数据量面积图'
+            text: []
         },
         toolbox: {
             feature: {
@@ -84,11 +93,8 @@ layui.use(['element', 'jquery', 'layer'], function() {
             }
         ]
     });
-    $(".rov").click(function () {
-        event.preventDefault();
-        var choose = $(this).prop('id');
-        var postdata={choose:choose};
-        console.log(postdata);
+    $(document).ready(function () {
+        var postdata = {choose: 'roll'};
         $.post('/choose',postdata, function (result) {
             var times = [];
             var numbers = [];
@@ -106,6 +112,9 @@ layui.use(['element', 'jquery', 'layer'], function() {
                 console.log(numbers);
                 myChart.hideLoading();    //隐藏加载动画
                 myChart.setOption({        //加载数据图表
+                    title: {
+                      text: 'roll'
+                    },
                     xAxis: {
                         data: times
                     },
@@ -124,5 +133,52 @@ layui.use(['element', 'jquery', 'layer'], function() {
                 myChart.hideLoading();
             }
         });
+    });
+    var status = true;
+    $(".rov").on('click',function () {
+        event.preventDefault();
+        var choose = $(this).prop('id');
+        var t = $(this).text();
+        var postdata = {choose: choose};
+        window.clearInterval(int);
+        int = window.setInterval(function () {
+            $.post('/choose', postdata, function (result) {
+                var times = [];
+                var numbers = [];
+                //请求成功时执行该函数内容，result即为服务器返回的json对象
+                if (result) {
+                    for (var i = 0; i < result.length; i++) {
+                        times.push(result[i].times);    //挨个取出类别并填入类别数组
+                        numbers.push({
+                            name: result[i].times,
+                            value: result[i].datas
+                        });
+                    }
+                    console.log(times);
+                    console.log(numbers);
+                    myChart.hideLoading();    //隐藏加载动画
+                    myChart.setOption({        //加载数据图表
+                        title: {
+                            text: t
+                        },
+                        xAxis: {
+                            data: times
+                        },
+                        series: [{
+                            // 根据名字对应到相应的系列
+                            name: '模拟数据',
+                            data: numbers
+                        }]
+                    });
+                    frame.style.display = "none";
+                    graph.style.display = "";
+                }
+                else {
+                    //请求失败时执行该函数
+                    alert("图表请求数据失败!");
+                    myChart.hideLoading();
+                }
+            });
+        },500);
     });
 });

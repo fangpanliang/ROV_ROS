@@ -15,36 +15,36 @@ public class IndexController extends Controller {
 
     public void choose() {
         String choose = getPara("choose");
-        System.out.println(choose);
         switch (choose) {
-            case "ForwardorBackward":
-                List<Record> records = srv.findForwardorBackward();
+            case "roll":
+                List<Record> records = srv.findRoll();
                 renderJson(records);
                 break;
-            case "ClimborDive":
-                records = srv.findClimborDive();
+            case "yaw":
+                records = srv.findYaw();
                 renderJson(records);
                 break;
-            case "RobotYaw":
-                records = srv.findRobotYaw();
+            case "pitch":
+                records = srv.findPitch();
                 renderJson(records);
                 break;
-            case "RobotDepth":
-                records = srv.findRobotDepth();
+            case "depth":
+                records = srv.findDepth();
                 renderJson(records);
                 break;
-            case "LeftorRight":
-                records = srv.findLeftorRight();
+            case "speed":
+                records = srv.findSpeed();
                 renderJson(records);
                 break;
-            case "UporDown":
-                records = srv.findUporDown();
+            case "status":
+                records = srv.findStatus();
                 renderJson(records);
                 break;
             default:
-                records = srv.findUporDown();
+                records = srv.findRoll();
                 renderJson(records);
                 break;
         }
     }
+
 }

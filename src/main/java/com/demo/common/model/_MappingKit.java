@@ -16,9 +16,8 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 public class _MappingKit {
 	
 	public static void mapping(ActiveRecordPlugin arp) {
-		arp.addMapping("device", "id", Device.class);
-		arp.addMapping("keyboard", "id", Keyboard.class);
 		arp.addMapping("rov", "id", Rov.class);
+		arp.addMapping("user", "id", User.class);
 	}
 }
 
